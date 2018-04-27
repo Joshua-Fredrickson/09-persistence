@@ -49,41 +49,57 @@ storage.fetchOne = function fetchOne(schema, id) {
 //   });
 // };
 
-storage.fetchAll = function fetchAll(schema) {
-  return new Promise((resolve, reject) => {
-    if (!schema) return reject(new Error('expected schema name'));
-    if (!memory[schema]) return reject(new Error('schema not found'));
 
-    const allItems = Object.values(memory[schema]);
-    const catzs = allItems.map(dog => dog.id);
+storage.fetchAll = function fetchAll() {
 
-    if (!catzs) {
-      return reject(new Error('object not found'));
-    }
-    return resolve(catzs);
-  });
-};
+  };
+
 
 
 storage.update = function update() {
 
+  };
+
+storage.delete = function del() {
 
 };
 
-
-storage.delete = function del(schema, id) {
-  return new Promise((resolve, reject) => {
-    if (!schema) return reject(new Error('expected schema name'));
-    if (!id) return reject(new Error('expected id'));
-    if (!memory[schema]) return reject(new Error('schema not found'));
-    const item = memory[schema][id];
-    delete memory[schema][id];
-
-    if (!item) {
-      return reject(new Error('item not found'));
-    }
-    delete item.memory.id;
-
-    return resolve(item);
-  });
-};
+//
+// storage.fetchAll = function fetchAll(schema) {
+//   return new Promise((resolve, reject) => {
+//     if (!schema) return reject(new Error('expected schema name'));
+//     if (!memory[schema]) return reject(new Error('schema not found'));
+//
+//     const allItems = Object.values(memory[schema]);
+//     const catzs = allItems.map(dog => dog.id);
+//
+//     if (!catzs) {
+//       return reject(new Error('object not found'));
+//     }
+//     return resolve(catzs);
+//   });
+// };
+//
+//
+// storage.update = function update() {
+//
+//
+// };
+//
+//
+// storage.delete = function del(schema, id) {
+//   return new Promise((resolve, reject) => {
+//     if (!schema) return reject(new Error('expected schema name'));
+//     if (!id) return reject(new Error('expected id'));
+//     if (!memory[schema]) return reject(new Error('schema not found'));
+//     const item = memory[schema][id];
+//     delete memory[schema][id];
+//
+//     if (!item) {
+//       return reject(new Error('item not found'));
+//     }
+//     delete item.memory.id;
+//
+//     return resolve(item);
+//   });
+// };
