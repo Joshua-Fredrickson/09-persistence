@@ -1,28 +1,29 @@
 'use strict';
 
 const logger = require('../lib/logger');
-const Note = require('../model/catz');
+const Catz = require('../model/catz');
 const storage = require('../lib/storage');
 const response = require('../lib/response');
 
-module.exports = function routeNote(router) {
-  router.post('/api/v1/note', (req, res) => {
-    logger.log(logger.INFO, 'NOTE-ROUTE: POST /api/v1/note');
+module.exports = function routeCatz(router) {
+  router.post('/api/v1/catz', (req, res) => {
+    logger.log(logger.INFO, 'CATZ-ROUTE: POST /api/v1/catz');
 
     try {
-      const newNote = new Note(req.body.title, req.body.content);
-      storage.create('Note', newNote)
-        .then((note) => {
-          response.sendJSON(res, 201, note);
+      const newCatz = new Catz(req.body., req.body.content);
+      storage.create('Catz', newCatz)
+        .then((catz) => {
+          response.sendJSON(res, 201, catz);
           return undefined;
         });
-  } catch (err) {
-      logger.log(logger.ERROR, `NOTE-ROUTE: There was a bad request ${err}`);
-      response.sendText(res, 400, err.message);
+    } catch (err) {
+      logger.log(logger.ERROR, `CATZ-ROUTE: There was a bad request ${err}`);
+      response.sendText(res, 400, 'error bad request');
       return undefined;
     }
     return undefined;
   });
+
   router.get('/api/v1/note', (req, res) => {
     if (req.url.query.id) {
       storage.fetchOne('Note', req.url.query.id)
@@ -34,7 +35,7 @@ module.exports = function routeNote(router) {
 
           response.sendText(res, 404, err.message);
         });
-  } else {
+    } else {
       storage.fetchAll('Note')
         .then((item) => {
           response.sendJSON(res, 200, item);

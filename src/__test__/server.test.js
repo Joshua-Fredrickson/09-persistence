@@ -2,17 +2,18 @@
 
 const server = require('../lib/server');
 const superagent = require('superagent');
+// const superagent = require('superagent');
 
 const testPort = 5000;
 const mockResource = { title: 'test title', content: 'test content' };
-let mockId = 5;
+let mockId = null;
 
 beforeAll(() => server.start(testPort));
 afterAll(() => server.stop());
 
 describe('VALID request to the API', () => {
   describe('POST /api/v1/catz', () => {
-    it('should respond with status 201 and created a new catz', () => {
+    it.only('should respond with status 201 and created a new catz', () => {
       return superagent.post(`:${testPort}/api/v1/catz`)
         .send(mockResource)
         .then((res) => {

@@ -8,8 +8,8 @@ const fs = Promise.promisifyAll(require('fs'), { suffix: 'Prom' });
 
 storage.create = function create(schema, item) {
 
-  if (!schema) return reject(new Error('Connot create a new item, schema required'));
-  if (!item) return reject(new Error('Connot create a new item, item required'));
+  if (!schema) return Promise.reject(new Error('Connot create a new item, schema required'));
+  if (!item) return Promise.reject(new Error('Connot create a new item, item required'));
   const json = JSON.stringify(item);
   return fs.writeFileProm(`${__dirname}/../data/${schema}/${item.id}.json`, json)
     .then(() => {
@@ -26,7 +26,7 @@ storage.create = function create(schema, item) {
 };
 
 storage.fetchOne = function fetchOne(schema, id) {
-    if (!schema) return reject(new Error('expected schema name'));
+    if (!schema) return Promise.reject(new Error('expected schema name'));
     if (!id) return Promise.reject(new Error('expected id'));
 
 
