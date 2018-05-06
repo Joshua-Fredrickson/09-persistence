@@ -23,9 +23,9 @@
 
 #### Feature Tasks
 * continue working on your vanilla REST API
-[ ] refactor your routes to be contained in a separate module (ex: `route/resource-route.js`)
-[ ] refactor your `res` messages & status codes to be contained in a separate module (ex: `response
+[x] refactor your routes to be contained in a separate module (ex: `route/resource-route.js`)
+[x] refactor your `res` messages & status codes to be contained in a separate module (ex: `response
 .js`)
-[ ] refactor the `storage.js` module to use file system persistence
-[ ] use the `fs` module to create and read the associated data files
-[ ] the name of the file should contain the related resource id
+[x] refactor the `storage.js` module to use file system persistence
+[x] use the `fs` module to create and read the associated data files
+[x] the name of the file should contain the related resource id
