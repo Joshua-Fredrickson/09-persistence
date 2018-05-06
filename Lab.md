@@ -15,15 +15,17 @@
 ## Requirements
 
 #### Configuration
-* Reference the file structure of [this template](https://github.com/codefellows/seattle-javascript-401d23/tree/master/back-end/00-empty-template) for the configuration files you need and folder structure
+[x] Reference the file structure of [this template](https://github
+.com/codefellows/seattle-javascript-401d23/tree/master/back-end/00-empty-template) for the configuration files you need and folder structure
 * `README.md`
-  * your `README.md` should include detailed instructions on how to use your API
-  * this should include documentation on how to access your API endpoints
+  [x] your `README.md` should include detailed instructions on how to use your API
+  [x]  this should include documentation on how to access your API endpoints
 
 #### Feature Tasks
 * continue working on your vanilla REST API
-* refactor your routes to be contained in a separate module (ex: `route/resource-route.js`)
-* refactor your `res` messages & status codes to be contained in a separate module (ex: `response.js`)
-* refactor the `storage.js` module to use file system persistence
-  * use the `fs` module to create and read the associated data files
-  * the name of the file should contain the related resource id
+[x] refactor your routes to be contained in a separate module (ex: `route/resource-route.js`)
+[x] refactor your `res` messages & status codes to be contained in a separate module (ex: `response
+.js`)
+[x] refactor the `storage.js` module to use file system persistence
+[x] use the `fs` module to create and read the associated data files
+[x] the name of the file should contain the related resource id

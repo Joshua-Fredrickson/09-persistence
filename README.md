@@ -1,31 +1,36 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 09: Vanilla REST API w/ Persistence
-======
+# LAB09 PERSISTENCE
 
-## Submission Instructions
-  * fork this repository & create a new branch for your work
-  * push to your repository
-  * submit a pull request to this repository
-  * submit a link to your PR in canvas
-  * write a question and observation on canvas
+**Author**: Joshua Fredrickson
 
-## Learning Objectives  
-* students will learn how to save resource data to the file system for a layer of data persistence
-* students will learn how to refactor commonly used coding constructs into custom helper modules
+**Version**: 2.0.0 
 
-## Requirements
+## Overview
+Lab 9 is an application the stores catz objects and stores them to your local machine
 
-#### Configuration
-[ ] Reference the file structure of [this template](https://github
-.com/codefellows/seattle-javascript-401d23/tree/master/back-end/00-empty-template) for the configuration files you need and folder structure
-* `README.md`
-  [ ] your `README.md` should include detailed instructions on how to use your API
-  [ ]  this should include documentation on how to access your API endpoints
+## Getting Started
+To use the Lab09 application, [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) 
+(Node Package manager) will need to be locally installed.  Once Node.js and npm have been 
+installed, install the Lab09 files. Prior to starting the Lab09 application, from the command 
+line while you are in the Lab09 file folder, enter the command ````npm i````.  This will download all 
+needed dependencies for the application to run.  After all files have been installed, the user will 
+have to start the server from the command line with ````nodemon index.js````.
+Then from another command line window, the user can run the test suite with ````npm run test````
 
-#### Feature Tasks
-* continue working on your vanilla REST API
-[x] refactor your routes to be contained in a separate module (ex: `route/resource-route.js`)
-[x] refactor your `res` messages & status codes to be contained in a separate module (ex: `response
-.js`)
-[x] refactor the `storage.js` module to use file system persistence
-[x] use the `fs` module to create and read the associated data files
-[x] the name of the file should contain the related resource id
+
+## Architecture
+This application was deployed with the following technologies.
+Node.js, npm, body-parser, dotenv, express, faker, mongoose, winston, babel, superagent, 
+http-errors, uuid, bluebird, nodemon, http, jest, eslint, JavaScript
+    
+SERVER ENDPOINTS 
+POST /api/catz
+GET /api/catz/:id
+PUT /api/catz/:id
+DELETE /api/catz/:id
+
+
+## Change Log 
+05-05-2018  4:30pm  first commit, scaffolding tests not passing
+
+## Credits and Collaborations
+Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
